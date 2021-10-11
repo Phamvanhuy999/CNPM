@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateLoaiSanPhamsTable extends Migration
+class AddColumnDeletedAt extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +13,8 @@ class CreateLoaiSanPhamsTable extends Migration
      */
     public function up()
     {
-        Schema::create('loai_san_phams', function (Blueprint $table) {
-            $table->id();
-            $table->string('ten_loaisp');
-
-
-            $table->timestamps();
+        Schema::table('loai_san_phams', function (Blueprint $table) {
+            $table->softDeletes();
         });
     }
 
@@ -29,6 +25,8 @@ class CreateLoaiSanPhamsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('loai_san_phams');
+        Schema::table('loai_san_phams', function (Blueprint $table) {
+            $table->dropColumn('deleted_at');
+        });
     }
 }

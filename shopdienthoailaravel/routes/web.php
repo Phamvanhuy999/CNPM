@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -27,5 +28,22 @@ Route::prefix('loaisanphams')->group(function () {
     Route::get('/themmoi', [
         'as'=>'loaisanphams.themmoi',
         'uses'=>'LoaiSanPhamController@themmoi'
+    ]);
+    Route::post('/themmoi_gui', [
+        'as'=>'loaisanphams.themmoi_gui',
+        'uses'=>'LoaiSanPhamController@themmoi_gui'
+    ]);
+
+    Route::get('/sua/{id}', [
+        'as'=>'loaisanphams.sua',
+        'uses'=>'LoaiSanPhamController@sua'
+    ]);
+    Route::post('/sua_gui/{id}', [
+        'as'=>'loaisanphams.sua_gui',
+        'uses'=>'LoaiSanPhamController@sua_gui'
+    ]);
+    Route::get('/xoa/{id}', [
+        'as'=>'loaisanphams.xoa',
+        'uses'=>'LoaiSanPhamController@xoa'
     ]);
 });

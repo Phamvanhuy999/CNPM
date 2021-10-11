@@ -6,60 +6,63 @@
     <title>Manh Dollar</title>
 @endsection
 @section('content')
-    <!-- Content Wrapper. Contains page content -->
+
     <div class="content-wrapper">
-        <!-- Content Header (Page header) -->
-    @include('admins.partials.content-header',['name'=>'Loại sản phẩm','key'=>'Danh Sách'])
 
-    <!-- /.content-header -->
+        @include('admins.partials.content-header',['name'=>'Loại sản phẩm','key'=>'Danh Sách'])
 
-        <!-- Main content -->
+        @if(session()->has('success'))
+            <div class="alert alert-success">
+                {{ session()->get('success') }}
+            </div>
+        @endif
         <div class="content">
             <div class="container-fluid">
                 <div class="row">
                     <div class="col-md-12">
-                        <a href="{{route('loaisanphams.themmoi')}}" class="btn btn-success float-right m-2">Thêm Mới Loại Sản Phẩm</a>
+                        <a href="{{route('loaisanphams.themmoi')}}" class="btn btn-success float-right m-2">Thêm Mới
+                            Loại Sản Phẩm</a>
                     </div>
                     <div class="col-md-12">
-                        <table class="table">
+                       <table class="table">
                             <thead>
                             <tr>
-                                <th scope="col">#</th>
-                                <th scope="col">First</th>
-                                <th scope="col">Last</th>
-                                <th scope="col">Handle</th>
+                                <th scope="col">Tên Loại Sản Phẩm</th>
+                                <th scope="col">Hoạt Động</th>
                             </tr>
                             </thead>
+
+                            @foreach($loai_sps as $loai_sp){
                             <tbody>
                             <tr>
-                                <th scope="row">1</th>
-                                <td>Mark</td>
-                                <td>Otto</td>
-                                <td>@mdo</td>
-                            </tr>
-                            <tr>
-                                <th scope="row">2</th>
-                                <td>Jacob</td>
-                                <td>Thornton</td>
-                                <td>@fat</td>
-                            </tr>
-                            <tr>
-                                <th scope="row">3</th>
-                                <td>Larry</td>
-                                <td>the Bird</td>
-                                <td>@twitter</td>
-                            </tr>
-                            </tbody>
-                        </table>
-                    </div>
+                                <td>{{$loai_sp->ten_loaisp}}</td>
+                                <td>
+                                    <a href="{{route('loaisanphams.sua',['id'=>$loai_sp->id])}}"
+                                       class="btn btn-default">Sửa</a>
+                                    @method('DELETE')
 
+                                    <a href="{{route('loaisanphams.xoa',['id'=>$loai_sp->id])}}" class="btn btn-danger" onclick="return confirm('Bạn có chắc chắn xóa không?');">Xóa</a>
+                                </td>
+                            </tr>
+                            }
+                            </tbody>
+                            @endforeach
+
+                        </table>
+
+                    </div>
+                    <div class="col-md-12">
+                        {{$loai_sps->links()}}
+                    </div>
                 </div>
-                <!-- /.row -->
-            </div><!-- /.container-fluid -->
+
+
+            </div>
         </div>
-        <!-- /.content -->
+
     </div>
-    <!-- /.content-wrapper -->
+
 
 @endsection
+
 
