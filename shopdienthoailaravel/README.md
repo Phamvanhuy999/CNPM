@@ -1,3 +1,13 @@
+## How to run
+-install composer
+-run composer install
+-copy file .env-example to file .env
+-run php artisan key:generate
+-open xampp then start service(apache , mysql)
+-create database : shop_dien_thoai_laravel
+-run php artisan migrate
+-run php artisan serve
+
 <p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400"></a></p>
 
 <p align="center">

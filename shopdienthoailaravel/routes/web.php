@@ -22,28 +22,56 @@ Route::get('/home', function () {
 });
 Route::prefix('loaisanphams')->group(function () {
     Route::get('/', [
-        'as'=>'loaisanphams.trangchu',
-        'uses'=>'LoaiSanPhamController@trangchu'
+        'as' => 'loaisanphams.trangchu',
+        'uses' => 'LoaiSanPhamController@trangchu'
     ]);
     Route::get('/themmoi', [
-        'as'=>'loaisanphams.themmoi',
-        'uses'=>'LoaiSanPhamController@themmoi'
+        'as' => 'loaisanphams.themmoi',
+        'uses' => 'LoaiSanPhamController@themmoi'
     ]);
     Route::post('/themmoi_gui', [
-        'as'=>'loaisanphams.themmoi_gui',
-        'uses'=>'LoaiSanPhamController@themmoi_gui'
+        'as' => 'loaisanphams.themmoi_gui',
+        'uses' => 'LoaiSanPhamController@themmoi_gui'
     ]);
 
     Route::get('/sua/{id}', [
-        'as'=>'loaisanphams.sua',
-        'uses'=>'LoaiSanPhamController@sua'
+        'as' => 'loaisanphams.sua',
+        'uses' => 'LoaiSanPhamController@sua'
     ]);
     Route::post('/sua_gui/{id}', [
-        'as'=>'loaisanphams.sua_gui',
-        'uses'=>'LoaiSanPhamController@sua_gui'
+        'as' => 'loaisanphams.sua_gui',
+        'uses' => 'LoaiSanPhamController@sua_gui'
     ]);
     Route::get('/xoa/{id}', [
-        'as'=>'loaisanphams.xoa',
-        'uses'=>'LoaiSanPhamController@xoa'
+        'as' => 'loaisanphams.xoa',
+        'uses' => 'LoaiSanPhamController@xoa'
+    ]);
+});
+
+Route::prefix('hangsanxuats')->group(function () {
+    Route::get('/', [
+        'as' => 'hangsanxuats.trangchu',
+        'uses' => 'HangSanXuatController@trangchu'
+    ]);
+    Route::get('/themmoi', [
+        'as' => 'hangsanxuats.themmoi',
+        'uses' => 'HangSanXuatController@themmoi'
+    ]);
+    Route::post('/themmoi_gui', [
+        'as' => 'hangsanxuats.themmoi_gui',
+        'uses' => 'HangSanXuatController@themmoi_gui'
+    ]);
+
+    Route::get('/sua/{id}', [
+        'as' => 'hangsanxuats.sua',
+        'uses' => 'HangSanXuatController@sua'
+    ]);
+    Route::post('/sua_gui/{id}', [
+        'as' => 'hangsanxuats.sua_gui',
+        'uses' => 'HangSanXuatController@sua_gui'
+    ]);
+    Route::get('/xoa/{id}', [
+        'as' => 'hangsanxuats.xoa',
+        'uses' => 'HangSanXuatController@xoa'
     ]);
 });
