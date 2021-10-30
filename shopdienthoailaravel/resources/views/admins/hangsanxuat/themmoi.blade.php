@@ -19,7 +19,9 @@
                             <label>Tên Hãng Sản Xuất</label>
                             <input type="text" class="form-control" name='ten_hangsx' id="" placeholder=" Nhập Tên Hãng Sản Xuất">
                             <label>Thông Tin</label>
-                            <input type="text" class="form-control" name='thong_tin' id="" placeholder=" Nhập Thông Tin Hãng Sản Xuất">
+                            <textarea type="text" class="form-control"  name=thong_tin id="mytextarea" rows="12"
+                                      placeholder=" Thông Tin">
+                            </textarea>
                         </div>
                         <button type="submit" class="btn btn-primary">Thêm Mới</button>
                     </form>
@@ -28,5 +30,12 @@
         </div>
     </div>
 </div>
+@section('script')
+    <script src="https://cdn.tiny.cloud/1/kktpoxr7mtiwg1ee6e8uakumipvx363fa6irx5y0dwsro05y/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
+    <script src="{{asset("content/js/list.js")}}"></script>
+    @endsection
+
+
+</script>
 
 @endsection

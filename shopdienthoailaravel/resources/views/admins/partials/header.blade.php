@@ -9,7 +9,7 @@
             <a href="index3.html" class="nav-link">Trang Chủ</a>
         </li>
         <li class="nav-item d-none d-sm-inline-block">
-            <a href="#" class="nav-link">Liện Hệ</a>
+            <a href="#" class="nav-link">Liên Hệ</a>
         </li>
     </ul>
 

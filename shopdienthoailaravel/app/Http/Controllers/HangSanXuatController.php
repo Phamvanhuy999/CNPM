@@ -2,13 +2,30 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Requests\StoreArticleRequest;
+
 use App\HangSanXuat;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Log;
+use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Str;
+use mysql_xdevapi\Exception;
+use phpDocumentor\Reflection\Types\This;
+
 
 class HangSanXuatController extends Controller
 {
+    private $hangsx;
+
+    /**
+     * HangSanXuatController constructor.
+     * @param $hangsx
+     */
+    public function __construct(HangSanXuat $hangsx)
+    {
+        $this->hangsx = $hangsx;
+    }
+
     public function themmoi()
     {
         return view('admins.hangsanxuat.themmoi');
@@ -35,18 +52,36 @@ class HangSanXuatController extends Controller
     }
     public function sua_gui(Request $request, $id)
     {
-        $hang_sx = HangSanXuat::findOrFail($id);
-        $hang_sx->ten_hangsx = $request->ten_hangsx;
-        $hang_sx->thong_tin = $request->thong_tin;
-        $hang_sx->update();
+        try{
+            DB::beginTransaction();
+            $dataProductUpdate=[
+                'ten_hangsx' => $request->ten_hangsx,
+                'thong_tin' => $request->thong_tin
+            ];
+            $this->hangsx->find($id)->update($dataProductUpdate);
+            DB::commit();
         session()->flash('success', 'Sửa thành công');
         return redirect()->route('hangsanxuats.trangchu');
+        }catch(Exception $exception){
+            DB::rollBack();
+            Log::error('Messege : ' . $exception->getMessage() . 'line : ' . $exception->getLine());
+        }
+
     }
-    public function xoa($id)
-    {
-        $hang_sx = HangSanXuat::findOrFail($id);
-        $hang_sx->delete();
-        session()->flash('success', 'Xóa thành công');
-        return redirect()->route('hangsanxuats.trangchu');
+    public function xoa($id){
+        try {
+            $this->hangsx->find($id)->delete();
+            return response()->json([
+                'code'=>200,
+                'message'=>'success'
+            ],200);
+
+        }catch(Exception $exception){
+            Log::error('Messege : ' . $exception->getMessage() . 'line : ' . $exception->getLine());
+            return response()->json([
+                'code'=>500,
+                'message'=>'fail'
+            ],500);
+        }
     }
 }

@@ -6,9 +6,22 @@ use App\Http\Requests\StoreArticleRequest;
 use App\LoaiSanPham;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Log;
+use mysql_xdevapi\Exception;
 
 class LoaiSanPhamController extends Controller
 {
+    private $loai_sp;
+
+    /**
+     * LoaiSanPhamController constructor.
+     * @param $loai_sp
+     */
+    public function __construct(LoaiSanPham $loai_sp)
+    {
+        $this->loai_sp = $loai_sp;
+    }
+
     public function themmoi()
     {
         return view('admins.loaisanpham.themmoi');
@@ -42,9 +55,19 @@ class LoaiSanPhamController extends Controller
     }
     public function xoa($id)
     {
-        $loai_sp = LoaiSanPham::findOrFail($id);
-        $loai_sp->delete();
-        session()->flash('success', 'Xóa thành công');
-        return redirect()->route('loaisanphams.trangchu');
+        try {
+            $this->loai_sp->find($id)->delete();
+            return response()->json([
+                'code' => 200,
+                'message' => 'success'
+            ], 200);
+
+        } catch (Exception $exception) {
+            Log::error('Messege : ' . $exception->getMessage() . 'line : ' . $exception->getLine());
+            return response()->json([
+                'code' => 500,
+                'message' => 'fail'
+            ], 500);
+        }
     }
 }

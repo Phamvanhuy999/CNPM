@@ -20,18 +20,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7c3a994e-0d82-41cb-87c7-ec4b644e80db" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/shopdienthoailaravel/database/migrations/2021_10_11_075045_add_column_deleted_at.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/shopdienthoailaravel/resources/views/admins/loaisanpham/sua.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shopdienthoailaravel/app/Http/Controllers/LoaiSanPhamController.php" beforeDir="false" afterPath="$PROJECT_DIR$/shopdienthoailaravel/app/Http/Controllers/LoaiSanPhamController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shopdienthoailaravel/app/LoaiSanPham.php" beforeDir="false" afterPath="$PROJECT_DIR$/shopdienthoailaravel/app/LoaiSanPham.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shopdienthoailaravel/database/migrations/2021_10_11_022246_create_loai_san_phams_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/shopdienthoailaravel/database/migrations/2021_10_11_022246_create_loai_san_phams_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shopdienthoailaravel/resources/views/admins/loaisanpham/themmoi.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/shopdienthoailaravel/resources/views/admins/loaisanpham/themmoi.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shopdienthoailaravel/resources/views/admins/loaisanpham/trangchu.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/shopdienthoailaravel/resources/views/admins/loaisanpham/trangchu.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shopdienthoailaravel/resources/views/admins/partials/content-header.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/shopdienthoailaravel/resources/views/admins/partials/content-header.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shopdienthoailaravel/resources/views/admins/partials/header.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/shopdienthoailaravel/resources/views/admins/partials/header.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shopdienthoailaravel/resources/views/admins/partials/siderbar.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/shopdienthoailaravel/resources/views/admins/partials/siderbar.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shopdienthoailaravel/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/shopdienthoailaravel/routes/web.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shopdienthoailaravel/resources/views/admins/hangsanxuat/trangchu.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/shopdienthoailaravel/resources/views/admins/hangsanxuat/trangchu.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

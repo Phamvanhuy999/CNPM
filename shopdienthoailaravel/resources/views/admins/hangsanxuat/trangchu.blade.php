@@ -27,6 +27,7 @@
                         <thead>
                             <tr>
                                 <th scope="col">Tên Hãng Sản Xuất</th>
+                               {{-- <th scope="col">Thông Tin</th>--}}
                                 <th scope="col">Hoạt Động</th>
                             </tr>
                         </thead>
@@ -34,12 +35,12 @@
                             @foreach($hang_sxs as $hang_sx)
                             <tr>
                                 <td>{{$hang_sx->ten_hangsx}}</td>
-                                <td>{{$hang_sx->thong_tin}}</td>
+                               {{-- <td>{{$hang_sx->thong_tin}}</td>--}}
                                 <td>
                                     <a href="{{route('hangsanxuats.sua',['id'=>$hang_sx->id])}}" class="btn btn-default">Sửa</a>
                                     @method('DELETE')
 
-                                    <a href="{{route('hangsanxuats.xoa',['id'=>$hang_sx->id])}}" class="btn btn-danger" onclick="return confirm('Bạn có chắc chắn xóa không?');">Xóa</a>
+                                    <a href="" data-url ="{{route('hangsanxuats.xoa',['id'=>$hang_sx->id])}}" class="btn btn-danger" id="xoa">Xóa</a>
                                 </td>
                             </tr>
                             @endforeach
@@ -56,6 +57,9 @@
     </div>
 
 </div>
-
+@section('script')
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="{{asset("content/js/list.js")}}"></script>
+@endsection
 
 @endsection

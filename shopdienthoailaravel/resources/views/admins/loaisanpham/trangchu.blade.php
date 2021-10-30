@@ -38,7 +38,7 @@
                                     <a href="{{route('loaisanphams.sua',['id'=>$loai_sp->id])}}" class="btn btn-default">Sửa</a>
                                     @method('DELETE')
 
-                                    <a href="{{route('loaisanphams.xoa',['id'=>$loai_sp->id])}}" class="btn btn-danger" onclick="return confirm('Bạn có chắc chắn xóa không?');">Xóa</a>
+                                    <a href="" data-url ="{{route('loaisanphams.xoa',['id'=>$loai_sp->id])}}" id="xoa" class="btn btn-danger" >Xóa</a>
                                 </td>
                             </tr>
                             @endforeach
@@ -55,6 +55,9 @@
     </div>
 
 </div>
-
+@section('script')
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="{{asset("content/js/list.js")}}"></script>
+@endsection
 
 @endsection
