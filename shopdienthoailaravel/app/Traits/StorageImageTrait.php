@@ -9,7 +9,7 @@ trait StorageImageTrait{
             $file = $request->$fielName;
             $fileNameOrigin = $file ->getClientOriginalName();
             $fileNameHash = Str::random(20) . '.' .$file->getClientOriginalExtension();
-            $filePath = $request->file('anh_sp')->storeAs('public/'.$folderName, $fileNameHash);
+            $filePath = $request->file($fielName)->storeAs('public/'.$folderName, $fileNameHash);
             $dataUploadTrait=[
                 'file_name'=>$fileNameOrigin,
                 "file_path"=>Storage::url($filePath)

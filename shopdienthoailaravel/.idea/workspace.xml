@@ -20,25 +20,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="11aae36e-396b-4103-817c-f15ff06484aa" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/app/Traits/StorageImageTrait.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/content/js/list.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/admins/login.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/admins/sanpham/sua.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/admins/sanpham/themmoi.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/admins/sanpham/trangchu.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/HangSanXuatController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/HangSanXuatController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/LoaiSanPhamController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/LoaiSanPhamController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/app.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/app.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admins/hangsanxuat/sua.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admins/hangsanxuat/sua.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admins/hangsanxuat/themmoi.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admins/hangsanxuat/themmoi.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admins/hangsanxuat/trangchu.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admins/hangsanxuat/trangchu.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admins/layouts/admin.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admins/layouts/admin.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admins/loaisanpham/trangchu.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admins/loaisanpham/trangchu.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admins/partials/header.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admins/partials/header.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/admins/sliders/sua.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/admins/sliders/themmoi.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/admins/sliders/trangchu.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/AdminSanPhamController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/AdminSanPhamController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Traits/StorageImageTrait.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Traits/StorageImageTrait.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/content/js/list.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/content/js/list.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/admins/partials/siderbar.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admins/partials/siderbar.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admins/sanpham/themmoi.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admins/sanpham/themmoi.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -211,7 +201,12 @@
       <option name="presentableId" value="Default" />
       <updated>1635412094865</updated>
       <workItem from="1635412095913" duration="45493000" />
-      <workItem from="1635590284671" duration="9723000" />
+      <workItem from="1635590284671" duration="10443000" />
+      <workItem from="1635937392190" duration="771000" />
+      <workItem from="1635947792866" duration="333000" />
+      <workItem from="1636080350526" duration="226000" />
+      <workItem from="1636081625505" duration="1314000" />
+      <workItem from="1636168018598" duration="15340000" />
     </task>
     <servers />
   </component>
@@ -235,13 +230,15 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="674" y="162" key="#PHP/0.0.1920.1040@0.0.1920.1040" timestamp="1635598738433" />
-    <state x="765" y="235" key="#com.intellij.ide.util.MemberChooser" timestamp="1635603263749">
+    <state x="765" y="235" key="#com.intellij.ide.util.MemberChooser" timestamp="1636177815310">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
+    <state x="765" y="235" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1636177815310" />
     <state x="765" y="235" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1635603263749" />
-    <state x="690" y="274" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1635603232364">
+    <state x="690" y="274" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1636189400996">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
+    <state x="690" y="274" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1636189400996" />
     <state x="690" y="274" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1635603232364" />
     <state x="1127" y="301" key="FileChooserDialogImpl" timestamp="1635419997733">
       <screen x="0" y="0" width="1920" height="1040" />
@@ -263,13 +260,19 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1340" height="266" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1635412351744" />
-    <state x="801" y="423" key="NewPhpFileDialog" timestamp="1635414461812">
+    <state x="801" y="423" key="NewPhpFileDialog" timestamp="1636172326660">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
+    <state x="801" y="423" key="NewPhpFileDialog/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1636172326660" />
     <state x="801" y="423" key="NewPhpFileDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1635414461812" />
-    <state x="630" y="219" width="672" height="678" key="search.everywhere.popup" timestamp="1635591156071">
+    <state x="616" y="240" key="run.anything.popup" timestamp="1636169725093">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
+    <state x="616" y="240" key="run.anything.popup/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1636169725093" />
+    <state x="630" y="219" width="672" height="678" key="search.everywhere.popup" timestamp="1636189375253">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="630" y="219" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1636189375253" />
     <state x="630" y="219" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1635591156071" />
   </component>
 </project>

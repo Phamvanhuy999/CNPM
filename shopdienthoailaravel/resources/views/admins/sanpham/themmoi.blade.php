@@ -6,7 +6,17 @@
 @section('content')
     <div class="content-wrapper">
         @include('admins.partials.content-header',['name'=>'Sản Phẩm','key'=>'Thêm Mới'])
-
+         <div class="col-md-12">
+             @if ($errors->any())
+                 <div class="alert alert-danger">
+                     <ul>
+                         @foreach ($errors->all() as $error)
+                             <li>{{ $error }}</li>
+                         @endforeach
+                     </ul>
+                 </div>
+             @endif
+         </div>
         <div class="content">
             <div class="container-fluid">
                 <div class="row ">
@@ -19,7 +29,7 @@
                                       <div class="col-md-6">
                                             <label>Tên Sản Phẩm</label>
                                             <input type="text" class="form-control" name='ten_sp' id=""
-                                                   placeholder=" Nhập Tên Sản Phẩm">
+                                                   placeholder=" Nhập Tên Sản Phẩm" value="{{old('ten_sp')}}">
                                             <label>Giá Nhập</label>
                                             <input type="number" class="form-control" name=gia_nhap_sp id=""
                                                    placeholder=" Giá Nhập Sản Phẩm">

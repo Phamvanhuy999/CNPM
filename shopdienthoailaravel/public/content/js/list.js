@@ -28,8 +28,9 @@ function actionDelete(event){
         icon: 'warning',
         showCancelButton: true,
         confirmButtonColor: '#3085d6',
+        confirmButtonText: 'Xóa',
+        cancelButtonText: 'Hủy',
         cancelButtonColor: '#d33',
-        confirmButtonText: 'Yes'
     }).then((result) => {
         if (result.isConfirmed) {
             $.ajax({

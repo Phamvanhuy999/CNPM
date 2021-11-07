@@ -104,5 +104,34 @@ Route::prefix('admin')->group(function () {
         ]);
 
     });
+    //Anh Quang Cao
+    Route::prefix('sliders')->group(function () {
+        Route::get('/', [
+            'as' => 'sliders.trangchu',
+            'uses' => 'AdminSliderController@trangchu'
+        ]);
+        Route::get('/themmoi', [
+            'as' => 'sliders.themmoi',
+            'uses' => 'AdminSliderController@themmoi'
+        ]);
+        Route::post('/themmoi_gui', [
+            'as' => 'sliders.themmoi_gui',
+            'uses' => 'AdminSliderController@themmoi_gui'
+        ]);
+        Route::get('/sua/{id}', [
+            'as' => 'sliders.sua',
+            'uses' => 'AdminSliderController@sua'
+        ]);
+        Route::post('/sua_gui/{id}', [
+            'as' => 'sliders.sua_gui',
+            'uses' => 'AdminSliderController@sua_gui'
+        ]);
+        Route::get('/xoa/{id}', [
+            'as' => 'sliders.xoa',
+            'uses' => 'AdminSliderController@xoa'
+        ]);
+
+    });
+
 });
 

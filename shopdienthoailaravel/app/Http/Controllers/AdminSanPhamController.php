@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\AnhSanPham;
 use App\HangSanXuat;
+use App\Http\Requests\ProductAddRequest;
 use App\LoaiSanPham;
 use App\SanPham;
 use App\Traits\StorageImageTrait;
@@ -42,7 +43,7 @@ class AdminSanPhamController extends Controller
         $hang_sx=HangSanXuat::all();
         return view('admins.sanpham.themmoi')->with(['loai_sp' => $loai_sp, 'hang_sx' => $hang_sx]);
     }
-    public function themmoi_gui (Request $request){
+    public function themmoi_gui (ProductAddRequest $request){
       try{
           DB::beginTransaction();
           $dataProduct=[
