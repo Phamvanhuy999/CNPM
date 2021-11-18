@@ -6,7 +6,7 @@
     <title>Manh Dollar</title>
 @endsection
 @section('content')
-    <div class="content-wrapper">
+    <div class="content-fluid">
         @include('admins.partials.content-header',['name'=>'Loại sản phẩm','key'=>'Sửa'])
         <div class="content">
             <div class="container-fluid">

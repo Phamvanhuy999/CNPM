@@ -8,7 +8,7 @@
 
 @section('content')
 
-    <div class="content-wrapper">
+    <div class="content-fluid">
 
         @include('admins.partials.content-header',['name'=>'Sản Phẩm','key'=>'Danh Sách'])
 
@@ -17,56 +17,55 @@
                 {{ session()->get('success') }}
             </div>
         @endif
-        <div class="content">
-            <div class="container-fluid">
-                <div class="row">
-                    <div class="col-md-12">
-                        <a href="{{route('sanphams.themmoi')}}" class="btn btn-success float-right m-2">Thêm Mới Sản Phẩm</a>
-                    </div>
-                    <div class="col-md-12">
-                        <table class="table">
-                            <thead>
+        <div class="card shadow mb-12">
+            <div class="card-body">
+                <div class="table-responsive">
+                    <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                        <thead>
+                        <tr>
+                            <th scope="col">Tên Sản Phẩm</th>
+                            <th scope="col">Giá Bán Sản Phẩm</th>
+                            <th scope="col">Ảnh Sản Phẩm</th>
+                            <th scope="col">Trạng Thái</th>
+                           {{-- <th scope="col">Thông Tin</th>--}}
+                            <th scope="col">Hãng sản xuất</th>
+                            <th scope="col">Loại sản phẩm</th>
+                            <th scope="col">Hoạt Động</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        @foreach($sanphams as $spItem )
                             <tr>
-                                <th scope="col">Tên Sản Phẩm</th>
-                                <th scope="col">Giá Bán Sản Phẩm</th>
-                                <th scope="col">Ảnh Sản Phẩm</th>
-                                <th scope="col">Trạng Thái</th>
-                                {{--<th scope="col">Thông Tin</th>--}}
-                                <th scope="col">Hãng sản xuất</th>
-                                <th scope="col">Loại sản phẩm</th>
-                                <th scope="col">Hoạt Động</th>
+                                <td>{{$spItem->ten_sp}}</td>
+                                <td>{{number_format($spItem->gia_ban_sp)}}$</td>
+                                <td><img src="{{$spItem->anh_sp}}" style="height:156px;object-fit: cover" ></td>
+                                <td>{{$spItem->trang_thai==1 ? 'Còn Hàng' : ''}}{{$spItem->trang_thai==0 ? 'Hết Hàng' : ''}}</td>
+                                 {{-- <td>{!!$spItem->thong_tin_sp!!}</td>--}}
+                                <td>{{optional($spItem->creator)->ten_hangsx}}</td>
+                                <td>{{optional($spItem->catagory)->ten_loaisp}}</td>
+
+                                <td>
+                                    @can('product-add')
+                                    <a href="{{route('sanphams.themmoi')}}" class="btn btn-success ">Thêm </a>
+                                    @endcan
+                                    @can('product-update')
+                                    <a href="{{route('sanphams.sua',['id'=>$spItem->id])}}" class="btn btn-warning">Sửa</a>
+                                        @endcan
+                                    @method('DELETE')
+                                        @can('product-delete')
+
+                                    <a href="" data-url ="{{route('sanphams.xoa',['id'=>$spItem->id])}}" class="btn btn-danger " id="xoa">Xóa</a>
+                                        @endcan
+                                </td>
                             </tr>
-                            </thead>
-                            <tbody>
-                            @foreach($sanphams as $spItem )
-                                <tr>
-                                    <td>{{$spItem->ten_sp}}</td>
-                                    <td>{{number_format($spItem->gia_ban_sp)}}$</td>
-                                    <td><img src="{{$spItem->anh_sp}}" style="height:156px;object-fit: cover" ></td>
-                                    <td>{{$spItem->trang_thai==1 ? 'Còn Hàng' : ''}}{{$spItem->trang_thai==0 ? 'Hết Hàng' : ''}}</td>
-                                  {{--  <td>{!!$spItem->thong_tin_sp!!}</td>--}}
-                                    <td>{{optional($spItem->creator)->ten_hangsx}}</td>
-                                    <td>{{optional($spItem->catagory)->ten_loaisp}}</td>
-
-                                    <td>
-                                        <a href="{{route('sanphams.sua',['id'=>$spItem->id])}}" class="btn btn-default">Sửa</a>
-                                        @method('DELETE')
-
-                                        <a href="" data-url ="{{route('sanphams.xoa',['id'=>$spItem->id])}}" class="btn btn-danger " id="xoa">Xóa</a>
-                                    </td>
-                                </tr>
-                            @endforeach
-                            </tbody>
-                        </table>
-                    </div>
-                    <div class="col-md-12">
-                        {{$sanphams->links()}}
-                    </div>
+                        @endforeach
+                        </tbody>
+                    </table>
                 </div>
-
-
             </div>
+            {{--</div>--}}
         </div>
+
 
     </div>
  @section('script')

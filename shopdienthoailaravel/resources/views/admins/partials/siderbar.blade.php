@@ -1,3 +1,4 @@
+{{--
 <!-- Main Sidebar Container -->
 <aside class="main-sidebar sidebar-dark-primary elevation-4">
     <!-- Brand Logo -->
@@ -30,35 +31,51 @@
 
         <nav class="mt-2">
             <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
-                <li class="nav-item">
-                    <a href="{{route('loaisanphams.trangchu')}}" class="nav-link">
+                <li class="nav-item" id='sidebarToggle'>
+                    <a href="{{route('loaisanphams.trangchu')}}"data-url class="nav-link">
                         <i class="nav-icon fas fa-th"></i>
                         <p>
                             Danh Mục Sản Phẩm
                         </p>
                     </a>
                 </li>
-                <li class="nav-item">
-                    <a href="{{route('hangsanxuats.trangchu')}}" class="nav-link">
+                <li class="nav-item" id='sidebarToggle'>
+                    <a href="{{route('hangsanxuats.trangchu')}}"data-url class="nav-link">
                         <i class="nav-icon fas fa-th"></i>
                         <p>
                           Hãng Sản Xuất
                         </p>
                     </a>
                 </li>
-                <li class="nav-item">
-                    <a href="{{route('sanphams.trangchu')}}" class="nav-link">
+                <li class="nav-item" id='sidebarToggle'>
+                    <a href="{{route('sanphams.trangchu')}}"data-url class="nav-link">
                         <i class="nav-icon fas fa-th"></i>
                         <p>
                             Sản Phẩm
                         </p>
                     </a>
                 </li>
-                <li class="nav-item">
-                    <a href="{{route('sliders.trangchu')}}" class="nav-link">
+                <li class="nav-item" id='sidebarToggle'>
+                    <a href="{{route('sliders.trangchu')}}"data-url class="nav-link">
                         <i class="nav-icon fas fa-th"></i>
                         <p>
                             Ảnh Quảng Cáo
+                        </p>
+                    </a>
+                </li>
+                <li class="nav-item" id='sidebarToggle'>
+                    <a href=""data-url="{{route('users.trangchu')}}" class="nav-link">
+                        <i class="nav-icon fas fa-th"></i>
+                        <p>
+                           Danh Sách Nhân Viên
+                        </p>
+                    </a>
+                </li>
+                <li class="nav-item" id='sidebarToggle'>
+                    <a href="" data-url="{{route('roles.trangchu')}}" class="nav-link">
+                        <i class="nav-icon fas fa-th"></i>
+                        <p>
+                            Vai Trò Hệ Thống
                         </p>
                     </a>
                 </li>
@@ -68,3 +85,79 @@
     </div>
 
 </aside>
+--}}
+<!-- Sidebar -->
+<ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
+
+    <!-- Sidebar - Brand -->
+    <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
+        <div class="sidebar-brand-icon rotate-n-15">
+            <i class="fas fa-laugh-wink"></i>
+        </div>
+        <div class="sidebar-brand-text mx-3">SB Admin <sup>2</sup></div>
+    </a>
+
+    <!-- Divider -->
+    <hr class="sidebar-divider my-0">
+
+    <!-- Nav Item - Dashboard -->
+    <li class="nav-item active">
+        <a class="nav-link" href="#">
+            <i class="fas fa-fw fa-tachometer-alt"></i>
+            <span>Dashboard</span></a>
+    </li>
+    <!-- Nav Item - Tables -->
+    @can('category-list')
+    <li class="nav-item">
+        <a class="nav-link" href="{{route('loaisanphams.trangchu')}}">
+            <i class="fas fa-fw fa-table"></i>
+            <span>Danh Mục Sản Phẩm</span></a>
+    </li>
+    @endcan
+    @can('branch-list')
+    <li class="nav-item">
+        <a class="nav-link" href="{{route('hangsanxuats.trangchu')}}">
+            <i class="fas fa-fw fa-table"></i>
+            <span>Hãng Sản Xuất</span></a>
+    </li>
+    @endcan
+    @can('product-list')
+    <li class="nav-item">
+        <a class="nav-link" href="{{route('sanphams.trangchu')}}">
+            <i class="fas fa-fw fa-table"></i>
+            <span>Sản Phẩm</span></a>
+    </li>
+    @endcan
+    @can('slider-list')
+    <li class="nav-item">
+        <a class="nav-link" href="{{route('sliders.trangchu')}}">
+            <i class="fas fa-fw fa-table"></i>
+            <span>Ảnh Quảng Cáo</span></a>
+    </li>
+    @endcan
+    @can('user-list')
+    <li class="nav-item">
+        <a class="nav-link" href="{{route('users.trangchu')}}">
+            <i class="fas fa-fw fa-table"></i>
+            <span>Danh Mục Nhân Viên</span></a>
+    </li>
+    @endcan
+    @can('role-list')
+    <li class="nav-item">
+        <a class="nav-link" href="{{route('roles.trangchu')}}">
+            <i class="fas fa-fw fa-table"></i>
+            <span>Vai Trò Hệ Thống</span></a>
+    </li>
+    @endcan
+
+
+    <!-- Divider -->
+    <hr class="sidebar-divider d-none d-md-block">
+
+    <!-- Sidebar Toggler (Sidebar) -->
+    <div class="text-center d-none d-md-inline">
+        <button class="rounded-circle border-0" id="sidebarToggle"></button>
+    </div>
+
+
+</ul>

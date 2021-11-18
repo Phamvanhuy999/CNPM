@@ -7,52 +7,52 @@
 @endsection
 @section('content')
 
-<div class="content-wrapper">
+<div class="content-fluid">
 
-    @include('admins.partials.content-header',['name'=>'Loại sản phẩm','key'=>'Danh Sách'])
+          @include('admins.partials.content-header',['name'=>'Loại Sản Phẩm','key'=>'Danh Mục'])
 
-    @if(session()->has('success'))
-    <div class="alert alert-success">
-        {{ session()->get('success') }}
-    </div>
-    @endif
-    <div class="content">
-        <div class="container-fluid">
-            <div class="row">
-                <div class="col-md-12">
-                    <a href="{{route('loaisanphams.themmoi')}}" class="btn btn-success float-right m-2">Thêm Mới Loại Sản Phẩm</a>
+                @if(session()->has('success'))
+                <div class="alert alert-success">
+                    {{ session()->get('success') }}
                 </div>
-                <div class="col-md-12">
-                    <table class="table">
-                        <thead>
-                            <tr>
-                                <th scope="col">Tên Loại Sản Phẩm</th>
-                                <th scope="col">Hoạt Động</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            @foreach($loai_sps as $loai_sp)
-                            <tr>
-                                <td>{{$loai_sp->ten_loaisp}}</td>
-                                <td>
-                                    <a href="{{route('loaisanphams.sua',['id'=>$loai_sp->id])}}" class="btn btn-default">Sửa</a>
-                                    @method('DELETE')
+                @endif
+                <div class="card shadow mb-12">
+                    <div class="card-body">
+                        <div class="table-responsive">
+                            <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                                <thead>
+                                <tr>
+                                    <th>Tên Loại Sản Phẩm</th>
+                                    <th>Hoạt Động</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                @foreach($loai_sps as $loai_sp)
+                                    <tr>
+                                        <td>{{$loai_sp->ten_loaisp}}</td>
+                                        <td>
+                                            @can('category-add')
+                                            <a href="{{route('loaisanphams.themmoi')}}" class="btn btn-success">Thêm</a>
+                                            @endcan
+                                                @can('category-update')
+                                            <a href="{{route('loaisanphams.sua',['id'=>$loai_sp->id])}}" class="btn btn-warning">Sửa</a>
+                                                @endcan
+                                            @method('DELETE')
+                                                @can('category-delete')
 
-                                    <a href="" data-url ="{{route('loaisanphams.xoa',['id'=>$loai_sp->id])}}" id="xoa" class="btn btn-danger" >Xóa</a>
-                                </td>
-                            </tr>
-                            @endforeach
-                        </tbody>
-                    </table>
-                </div>
-                <div class="col-md-12">
-                    {{$loai_sps->links()}}
-                </div>
+                                            <a href="" data-url ="{{route('loaisanphams.xoa',['id'=>$loai_sp->id])}}" id="xoa" class="btn btn-danger" >Xóa</a>
+                                                @endcan
+                                        </td>
+                                    </tr>
+                                @endforeach
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                {{--</div>--}}
             </div>
 
 
-        </div>
-    </div>
 
 </div>
 @section('script')

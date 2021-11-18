@@ -7,7 +7,7 @@
 @endsection
 @section('content')
 
-<div class="content-wrapper">
+<div class="content-fluid">
 
     @include('admins.partials.content-header',['name'=>'Hãng Sản Xuất','key'=>'Danh Sách'])
 
@@ -16,44 +16,40 @@
         {{ session()->get('success') }}
     </div>
     @endif
-    <div class="content">
-        <div class="container-fluid">
-            <div class="row">
-                <div class="col-md-12">
-                    <a href="{{route('hangsanxuats.themmoi')}}" class="btn btn-success float-right m-2">Thêm Mới Hãng Sản Xuất</a>
-                </div>
-                <div class="col-md-12">
-                    <table class="table">
-                        <thead>
-                            <tr>
-                                <th scope="col">Tên Hãng Sản Xuất</th>
-                               {{-- <th scope="col">Thông Tin</th>--}}
-                                <th scope="col">Hoạt Động</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            @foreach($hang_sxs as $hang_sx)
-                            <tr>
-                                <td>{{$hang_sx->ten_hangsx}}</td>
-                               {{-- <td>{{$hang_sx->thong_tin}}</td>--}}
-                                <td>
-                                    <a href="{{route('hangsanxuats.sua',['id'=>$hang_sx->id])}}" class="btn btn-default">Sửa</a>
-                                    @method('DELETE')
-
-                                    <a href="" data-url ="{{route('hangsanxuats.xoa',['id'=>$hang_sx->id])}}" class="btn btn-danger" id="xoa">Xóa</a>
-                                </td>
-                            </tr>
-                            @endforeach
-                        </tbody>
-                    </table>
-                </div>
-                <div class="col-md-12">
-                    {{$hang_sxs->links()}}
-                </div>
+    <div class="card shadow mb-12">
+        <div class="card-body">
+            <div class="table-responsive">
+                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                    <thead>
+                    <tr>
+                        <th>Tên Hãng Sản Xuất</th>
+                        <th>Hoạt Động</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    @foreach($hang_sxs as $hang_sx)
+                        <tr>
+                            <td>{{$hang_sx->ten_hangsx}}</td>
+                            {{-- <td>{{$hang_sx->thong_tin}}</td>--}}
+                            <td>
+                                @can('branch-add')
+                                <a href="{{route('hangsanxuats.themmoi')}}" class="btn btn-success">Thêm</a>
+                                @endcan
+                                    @can('branch-update')
+                                <a href="{{route('hangsanxuats.sua',['id'=>$hang_sx->id])}}" class="btn btn-warning">Sửa</a>
+                                    @endcan
+                                @method('DELETE')
+                                    @can('branch-delete')
+                                <a href="" data-url ="{{route('hangsanxuats.xoa',['id'=>$hang_sx->id])}}" class="btn btn-danger" id="xoa">Xóa</a>
+                                    @endcan
+                            </td>
+                        </tr>
+                    @endforeach
+                    </tbody>
+                </table>
             </div>
-
-
         </div>
+        {{--</div>--}}
     </div>
 
 </div>

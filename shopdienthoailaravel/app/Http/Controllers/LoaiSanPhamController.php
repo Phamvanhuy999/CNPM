@@ -28,7 +28,7 @@ class LoaiSanPhamController extends Controller
     }
     public function trangchu()
     {
-        $loai_sps = LoaiSanPham::latest()->paginate(3);
+        $loai_sps = $this->loai_sp->orderBy('id','asc')->get();
         return view('admins.loaisanpham.trangchu', compact('loai_sps', $loai_sps))->with('i', (request()->input('page', 1) - 1) * 3);
     }
     public function themmoi_gui(Request $request)

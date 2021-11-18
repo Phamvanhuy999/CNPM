@@ -17,6 +17,21 @@
         }
     })
 });*/
+
+// $('#sidebarToggle').click(function(){
+//     let urlRequest=$(this).data('url');
+//     $.ajax({
+//         type: "GET",
+//         url: urlRequest,
+//        /* data: { },*/
+//         success: function(data){
+//             alert(data);
+//             $('.content').html(data);
+//         }
+//     });
+//
+// });
+
 function actionDelete(event){
     event.preventDefault();//cắt reload
     let urlRequest=$(this).data('url');
@@ -109,4 +124,5 @@ $(function (){
 
 
 });
+
 

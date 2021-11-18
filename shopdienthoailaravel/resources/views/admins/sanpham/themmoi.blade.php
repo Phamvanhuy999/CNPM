@@ -4,7 +4,7 @@
     <title>Manh Dollar</title>
 @endsection
 @section('content')
-    <div class="content-wrapper">
+    <div class="content-fluid">
         @include('admins.partials.content-header',['name'=>'Sản Phẩm','key'=>'Thêm Mới'])
          <div class="col-md-12">
              @if ($errors->any())

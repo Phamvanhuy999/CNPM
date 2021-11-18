@@ -1,4 +1,4 @@
-<div class="content-header">
+{{--<div class="content-header">
     <div class="container-fluid">
         <div class="row mb-2">
             <div class="col-sm-6">
@@ -12,5 +12,9 @@
             </div>
         </div>
     </div>
+</div>--}}
+<div class="d-sm-flex align-items-center justify-content-between mb-4">
+    <h1 class="h3 mb-0 text-gray-800">{{$key . ' ' . $name}}</h1>
+    <a href="#" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i
+            class=""></i> {{$name .' / '. $key}}</a>
 </div>
-
