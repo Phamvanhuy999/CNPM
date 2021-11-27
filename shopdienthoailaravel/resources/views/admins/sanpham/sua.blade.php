@@ -4,7 +4,7 @@
     <title>Manh Dollar</title>
 @endsection
 @section('content')
-    <div class="content-fluid">
+    <div class="content-fluid" style="margin: 10px">
         @include('admins.partials.content-header',['name'=>'Sản Phẩm','key'=>'Sửa '])
 
         <div class="content">
@@ -77,7 +77,7 @@
 
                                 <label>Thông Tin</label>
                                 <textarea type="text" class="form-control" name=thong_tin_sp id="mytextarea" rows="12"
-                                          placeholder="Thông Tin">{{$sanphams->thong_tin_sp}}
+                                          placeholder="Thông Tin">{!!$sanphams->thong_tin_sp!!}
                                 </textarea>
                             </div>
 

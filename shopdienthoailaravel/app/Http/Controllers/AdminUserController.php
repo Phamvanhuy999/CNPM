@@ -29,7 +29,7 @@ class AdminUserController extends Controller
     }
 
     public function trangchu(){
-        $users = $this->user->latest()->paginate(3);
+        $users = $this->user->get();
         return view('admins.user.trangchu',compact('users'));
     }
     public function themmoi(){

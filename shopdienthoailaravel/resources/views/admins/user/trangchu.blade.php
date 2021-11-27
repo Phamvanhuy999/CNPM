@@ -8,9 +8,12 @@
 
 @section('content')
 
-    <div class="content-fluid">
+    <div class="content-fluid" style="margin: 10px" >
 
         @include('admins.partials.content-header',['name'=>'DS Nhân Viên','key'=>'Danh Sách'])
+        @can('user-add')
+            <a href="{{route('users.themmoi')}}" class="btn btn-success" style="margin-bottom: 10px">Thêm Mới Nhân Viên</a>
+        @endcan
 
         @if(session()->has('success'))
             <div class="alert alert-success">
@@ -36,9 +39,7 @@
                                 <td>{{$Item->email}}</td>
                                 <td><img src="{{$Item->image_path}}" style="height:100px;object-fit: cover"></td>
                                 <td>
-                                    @can('user-add')
-                                    <a href="{{route('users.themmoi')}}" class="btn btn-success">Thêm</a>
-                                    @endcan
+
                                         @can('user-update')
                                     <a href="{{route('users.sua',['id'=>$Item->id])}}" class="btn btn-warning">Sửa</a>
                                         @endcan

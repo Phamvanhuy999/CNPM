@@ -7,9 +7,12 @@
 @endsection
 @section('content')
 
-<div class="content-fluid">
+<div class="content-fluid" style="margin: 10px">
 
     @include('admins.partials.content-header',['name'=>'Hãng Sản Xuất','key'=>'Danh Sách'])
+    @can('branch-add')
+        <a href="{{route('hangsanxuats.themmoi')}}" class="btn btn-success" style="margin-bottom: 10px">Thêm Mới Hãng Sản Xuất</a>
+    @endcan
 
     @if(session()->has('success'))
     <div class="alert alert-success">
@@ -32,9 +35,7 @@
                             <td>{{$hang_sx->ten_hangsx}}</td>
                             {{-- <td>{{$hang_sx->thong_tin}}</td>--}}
                             <td>
-                                @can('branch-add')
-                                <a href="{{route('hangsanxuats.themmoi')}}" class="btn btn-success">Thêm</a>
-                                @endcan
+
                                     @can('branch-update')
                                 <a href="{{route('hangsanxuats.sua',['id'=>$hang_sx->id])}}" class="btn btn-warning">Sửa</a>
                                     @endcan

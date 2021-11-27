@@ -32,7 +32,7 @@ class HangSanXuatController extends Controller
     }
     public function trangchu()
     {
-        $hang_sxs = HangSanXuat::latest()->paginate(3);
+        $hang_sxs = HangSanXuat::all();
         return view('admins.hangsanxuat.trangchu', compact('hang_sxs', $hang_sxs))->with('i', (request()->input('page', 1) - 1) * 3);
     }
     public function themmoi_gui(Request $request)

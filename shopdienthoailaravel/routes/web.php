@@ -114,6 +114,11 @@ Route::group(['prefix' => 'admin','middleware' => ['auth']], function() {
                 'uses' => 'AdminSanPhamController@xoa',
                 'middleware' => 'can:product-delete'
             ]);
+            Route::get('/chitiet/{id}', [
+                'as' => 'sanphams.chitiet',
+                'uses' => 'AdminSanPhamController@chitiet',
+                'middleware' => 'can:product-detail'
+            ]);
 
         });
         //Anh Quang Cao

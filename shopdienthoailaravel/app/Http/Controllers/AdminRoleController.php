@@ -25,7 +25,7 @@ class AdminRoleController extends Controller
     }
 
     public function trangchu(){
-        $roles = $this->role->latest()->paginate(3);
+        $roles = $this->role->get();
         return view('admins.role.trangchu',compact('roles'));
     }
     public function themmoi(){

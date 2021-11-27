@@ -11,7 +11,7 @@
 @endsection
 
 @section('content')
-    <div class="content-fluid">
+    <div class="content-fluid" style="margin: 10px">
         @include('admins.partials.content-header',['name'=>'Nhân Viên','key'=>'Sửa'])
         <div class="content">
             <div class="container-fluid">

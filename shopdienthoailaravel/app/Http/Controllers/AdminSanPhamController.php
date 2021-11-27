@@ -35,7 +35,7 @@ class AdminSanPhamController extends Controller
     }
 
     public function trangchu(){
-        $sanphams= $this->sanpham->latest()->paginate(5);
+        $sanphams= $this->sanpham->get();
       return view('admins.sanpham.trangchu',compact('sanphams'));
     }
     public function themmoi(){
@@ -150,5 +150,14 @@ class AdminSanPhamController extends Controller
                'message'=>'fail'
             ],500);
         }
+    }
+    public function chitiet($id){
+       $sanphams=$this->sanpham->find($id);
+        $loai_sp_selected = LoaiSanPham::find($sanphams->loai_san_pham_id);
+        $hang_sx_selected = HangSanXuat::find($sanphams->hang_san_xuat_id);
+        $loai_sp = LoaiSanPham::all();
+        $hang_sx=HangSanXuat::all();
+        return view('admins.sanpham.chitiet',compact('sanphams','loai_sp_selected','hang_sx_selected'))->with(['loai_sp' => $loai_sp, 'hang_sx' => $hang_sx]);
+
     }
 }

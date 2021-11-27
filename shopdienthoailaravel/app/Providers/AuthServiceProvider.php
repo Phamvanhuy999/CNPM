@@ -44,6 +44,7 @@ class AuthServiceProvider extends ServiceProvider
         Gate::define('product-add', 'App\Policies\SanPhamPolicy@create');
         Gate::define('product-update', 'App\Policies\SanPhamPolicy@update');
         Gate::define('product-delete', 'App\Policies\SanPhamPolicy@delete');
+        Gate::define('product-detail', 'App\Policies\SanPhamPolicy@detail');
 
         Gate::define('slider-list', 'App\Policies\SliderPolicy@view');
         Gate::define('slider-add', 'App\Policies\SliderPolicy@create');

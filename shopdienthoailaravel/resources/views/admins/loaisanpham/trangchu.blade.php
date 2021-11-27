@@ -7,9 +7,12 @@
 @endsection
 @section('content')
 
-<div class="content-fluid">
+<div class="content-fluid" style="margin: 10px">
 
           @include('admins.partials.content-header',['name'=>'Loại Sản Phẩm','key'=>'Danh Mục'])
+    @can('category-add')
+        <a href="{{route('loaisanphams.themmoi')}}" class="btn btn-success" style="margin-bottom: 10px">Thêm Mới Loại Sản Phẩm</a>
+    @endcan
 
                 @if(session()->has('success'))
                 <div class="alert alert-success">
@@ -31,9 +34,7 @@
                                     <tr>
                                         <td>{{$loai_sp->ten_loaisp}}</td>
                                         <td>
-                                            @can('category-add')
-                                            <a href="{{route('loaisanphams.themmoi')}}" class="btn btn-success">Thêm</a>
-                                            @endcan
+
                                                 @can('category-update')
                                             <a href="{{route('loaisanphams.sua',['id'=>$loai_sp->id])}}" class="btn btn-warning">Sửa</a>
                                                 @endcan

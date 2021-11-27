@@ -9,7 +9,7 @@
     <link href="{{asset('vendor/role/add/add.css')}}" rel="stylesheet">
 @endsection
 @section('content')
-    <div class="content-fluid">
+    <div class="content-fluid" style="margin: 10px">
         @include('admins.partials.content-header',['name'=>'Vai Trò Hệ Thống','key'=>'Sửa'])
         <div class="content">
             <div class="container-fluid">

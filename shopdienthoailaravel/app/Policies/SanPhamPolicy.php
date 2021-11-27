@@ -18,7 +18,7 @@ class SanPhamPolicy
      */
     public function viewAny(User $user)
     {
-        //
+
     }
 
     /**
@@ -91,4 +91,9 @@ class SanPhamPolicy
     {
         //
     }
+    public function detail(User $user)
+    {
+        return $user->checkPermissionAccess(config('permissions.access.detail-product'));
+    }
+
 }

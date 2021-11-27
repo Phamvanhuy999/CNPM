@@ -16,6 +16,7 @@ return[
         'add-product'=>'add_product',
         'edit-product'=>'edit_product',
         'delete-product'=>'delete_product',
+        'detail-product'=>'detail_product',
 
         'list-slider'=>'list_slider',
         'add-slider'=>'add_slider',

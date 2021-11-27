@@ -24,7 +24,7 @@ class AdminSliderController extends Controller
     }
 
     public function trangchu(){
-        $sliders= $this->slider->latest()->paginate(5);
+        $sliders= $this->slider->get();
         return view('admins.sliders.trangchu',compact('sliders'));
     }
     public function themmoi(){

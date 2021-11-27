@@ -4,7 +4,7 @@
     <title>Manh Dollar</title>
 @endsection
 @section('content')
-    <div class="content-fluid">
+    <div class="content-fluid" style="margin: 10px">
         @include('admins.partials.content-header',['name'=>'Sản Phẩm','key'=>'Thêm Mới'])
          <div class="col-md-12">
              @if ($errors->any())
@@ -40,10 +40,10 @@
                                           <input type="file" class="form-control-file" name=anh_sp id=""
                                                  placeholder=" Ảnh Sản Phẩm">
                                           <label>Ảnh Chi Tiết Sản Phẩm</label>
-                                          <input type="file" multiple class="form-control-file" name=link[] id=""
+                                          <input type="file" multiple class="form-control-file" name=link[] id="" ran
                                                  placeholder=" Ảnh Chi tiết Sản Phẩm">
                                             <label>Trạng Thái</label>
-                                            <input type="number" class="form-control" name=trang_thai id=""
+                                            <input type="number" class="form-control" name=trang_thai id="" min="0" max="1"
                                                    placeholder=" 1-Còn Hàng | 0-Hết Hàng">
 
                                             <label>Hãng Sản Xuất</label>

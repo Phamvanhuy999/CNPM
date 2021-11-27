@@ -8,9 +8,12 @@
 
 @section('content')
 
-    <div class="content-fluid">
+    <div class="content-fluid" style="margin: 10px">
 
         @include('admins.partials.content-header',['name'=>'Vai Trò Hệ Thống','key'=>'Danh Sách'])
+        @can('role-add')
+            <a href="{{route('roles.themmoi')}}" class="btn btn-success" style="margin-bottom: 10px">Thêm Vai Trò </a>
+        @endcan
 
         @if(session()->has('success'))
             <div class="alert alert-success">
@@ -75,9 +78,7 @@
                                 <td>{{$Item->name}}</td>
                                 <td>{{$Item->display_name}}</td>
                                 <td>
-                                    @can('role-add')
-                                    <a href="{{route('roles.themmoi')}}" class="btn btn-success">Thêm </a>
-                                    @endcan
+
                                         @can('role-update')
                                     <a href="{{route('roles.sua',['id'=>$Item->id])}}" class="btn btn-warning">Sửa</a>
                                         @endcan

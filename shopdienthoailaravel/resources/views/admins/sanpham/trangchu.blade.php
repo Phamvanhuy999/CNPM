@@ -8,9 +8,12 @@
 
 @section('content')
 
-    <div class="content-fluid">
+    <div class="content-fluid" style="margin: 10px">
 
         @include('admins.partials.content-header',['name'=>'Sản Phẩm','key'=>'Danh Sách'])
+        @can('product-add')
+            <a href="{{route('sanphams.themmoi')}}" class="btn btn-success " style="margin-bottom: 10px">Thêm Mới Sản Phẩm </a>
+        @endcan
 
         @if(session()->has('success'))
             <div class="alert alert-success">
@@ -45,11 +48,12 @@
                                 <td>{{optional($spItem->catagory)->ten_loaisp}}</td>
 
                                 <td>
-                                    @can('product-add')
-                                    <a href="{{route('sanphams.themmoi')}}" class="btn btn-success ">Thêm </a>
-                                    @endcan
+
                                     @can('product-update')
                                     <a href="{{route('sanphams.sua',['id'=>$spItem->id])}}" class="btn btn-warning">Sửa</a>
+                                        @endcan
+                                        @can('product-detail')
+                                            <a href="{{route('sanphams.chitiet',['id'=>$spItem->id])}}" class="btn btn-info">Chi Tiết</a>
                                         @endcan
                                     @method('DELETE')
                                         @can('product-delete')

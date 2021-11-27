@@ -1,5 +1,5 @@
 <?php
-namespace App\Traits;
+namespace App\Traits;//dùng trong soft delete
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Str;
 
@@ -7,7 +7,7 @@ trait StorageImageTrait{
     public function storageTraitUpload($request,$fielName,$folderName){
         if($request->hasFile($fielName)){
             $file = $request->$fielName;
-            $fileNameOrigin = $file ->getClientOriginalName();
+            $fileNameOrigin = $file ->getClientOriginalName();// lấy tên file khi upload lên
             $fileNameHash = Str::random(20) . '.' .$file->getClientOriginalExtension();
             $filePath = $request->file($fielName)->storeAs('public/'.$folderName, $fileNameHash);
             $dataUploadTrait=[

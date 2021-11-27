@@ -8,9 +8,12 @@
 
 @section('content')
 
-    <div class="content-fluid">
+    <div class="content-fluid" style="margin: 10px">
 
         @include('admins.partials.content-header',['name'=>'Ảnh Quảng Cáo','key'=>'Danh Sách'])
+        @can('slider-add')
+            <a href="{{route('sliders.themmoi')}}" class="btn btn-success " style="margin-bottom: 10px">Thêm Mới Ảnh Quảng Cáo </a>
+        @endcan
 
         @if(session()->has('success'))
             <div class="alert alert-success">
@@ -80,9 +83,7 @@
                                 <td>{{$Item->description}}</td>
                                 <td><img src="{{$Item->image_path}}" style="height:156px;object-fit: cover" ></td>
                                 <td>
-                                    @can('slider-add')
-                                    <a href="{{route('sliders.themmoi')}}" class="btn btn-success ">Thêm </a>
-                                    @endcan
+
                                         @can('slider-update')
                                     <a href="{{route('sliders.sua',['id'=>$Item->id])}}" class="btn btn-warning">Sửa</a>
                                         @endcan
